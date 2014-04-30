@@ -1,0 +1,30 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="button-disclosure" extends="button" attributes="disclose open" on-click="{{buttonClick}}">
+	<script>
+		Polymer('button-disclosure', {
+			ready: function() {
+			},
+			buttonClick: function(event, detail, sender) {
+				this.open = !this.open;
+			},
+			openChanged: function(oldValue, newValue) {
+				this.setAttribute('aria-expended', newValue);
+				if (newValue) {
+					this.target.style.display='block';
+				} else {
+					this.target.style.display='none';
+				}
+			},
+			discloseChanged: function(oldValue, newValue) {
+				this.setAttribute('aria-controls', newValue);
+				this.target = document.querySelector('#' + newValue);
+				if (this.target) {
+					this.open = false;
+				} else {		
+					console.log("Target not found '" + newValue + "'");
+				}
+			},
+		});
+	</script>
+</polymer-element>
