@@ -1,0 +1,20 @@
+{
+  "name": "CE-demos",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ThePacielloGroup/CE-demos",
+  "authors": [
+    "Cédric Trévisan <ctrevisan@paciellogroup.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.2.3"
+  }
+}
