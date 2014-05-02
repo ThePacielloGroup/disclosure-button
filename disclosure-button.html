@@ -1,6 +1,6 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 
-<polymer-element name="disclosure-button" extends="button" attributes="disclose open" on-click="{{buttonClick}}">
+<polymer-element name="disclosure-button" extends="button" attributes="controlfor open" on-click="{{buttonClick}}">
 	<template>
 		<template if={{open==false}}>►</template>
 		<template if={{open==true}}>▼</template>
@@ -22,7 +22,7 @@
 					this.target.style.display='none';
 				}
 			},
-			discloseChanged: function(oldValue, newValue) {
+			controlforChanged: function(oldValue, newValue) {
 				this.setAttribute('aria-controls', newValue);
 				this.target = document.querySelector('#' + newValue);
 				if (this.target) {
