@@ -1,7 +1,7 @@
 {
-  "name": "CE-demos",
-  "version": "0.0.0",
-  "homepage": "https://github.com/ThePacielloGroup/CE-demos",
+  "name": "disclosure-button",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ThePacielloGroup/disclosure-button",
   "authors": [
     "Cédric Trévisan <ctrevisan@paciellogroup.com>"
   ],
