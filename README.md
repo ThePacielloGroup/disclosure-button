@@ -1,3 +1,6 @@
+disclosure-button custom element
+================================
+
 In order to work from your hard drive, you need to explicitly allow your browser to access it. The method for doing so is different for each browser.
 
 For Chrome, add the --allow-file-access-from-files command line switch to make it work. On Windows, this is accomplished by creating a shortcut to Chrome (right click a Chrome icon and select "Create shortcut", or try dragging it to your desktop), right clicking it, selecting Properties, and typing --allow-file-access-from-files after "...chrome.exe" in the Target box.
