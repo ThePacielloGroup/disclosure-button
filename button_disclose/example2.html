@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disclosure Button Demo</title>
+	<script src="../bower_components/platform/platform.js"></script>
+	<link rel="import" href="button-disclosure.html">
+    <style>table
+{
+border-collapse:collapse;
+width:20.2em;
+
+	border: 1px solid #630;	
+	
+font: normal 90% arial, Verdana, helvetica, sans-serif;
+}
+
+table tr th {text-align:left}
+
+
+ table  td, table th
+
+{
+
+	text-align: left;
+
+	vertical-align: top;
+
+	padding: 0.3em;
+
+	border: 1px solid #630;
+
+}
+
+th {
+
+	font-weight: bold;
+background-color:#ffffff;
+	text-align: center;
+
+}
+button {}
+</style>
+</head>
+<body>
+<h1> <a href="../disclosure-button-spec/index.html">disclosure-button</a> custom control example</h1>
+	<main role="main">
+	
+			<button is="disclosure-button" disclose="table-details">Rainfall in millimetres 
+by Country and Season</button>
+			
+<table id="table-details">
+<tr>
+<td></td>
+<th scope="col">UK </th>
+<th scope="col">Japan</th>
+<th scope="col">Australia</th>
+</tr>
+<tr>
+<th scope="row">Spring </th>
+<td>5.5 (highest)</td>
+<td>2.4 </td>
+<td>2 (lowest)</td>
+</tr>
+<tr><th scope="row">Summer </th>
+<td>4.5 (highest)</td>
+<td>3.4</td>
+<td>2 (lowest)</td>
+</tr>
+<tr>
+<th scope="row">Autumn</th>
+<td>3.5 (highest)</td>
+<td>1.8 </td>
+<td>1.5 (lowest)</td>
+</tr>
+<tr>
+<th scope="row">Winter</th>
+<td>1.5 (highest)</td>
+<td>1.2 </td><td>1 (lowest)</td>
+</tr>
+</table>
+		
+	</main>
+</body>
+</html>
