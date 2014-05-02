@@ -1,34 +1,51 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 
-<polymer-element name="disclosure-button" extends="button" attributes="controlfor open" on-click="{{buttonClick}}">
+<polymer-element name="disclosure-button" extends="button" attributes="controlfor expanded" on-click="{{buttonClick}}">
 	<template>
-		<template if={{open==false}}>►</template>
-		<template if={{open==true}}>▼</template>
+		<style type="text/css">
+			:host #icon:before {
+				content:"►"; font-size: 1em;
+			}
+			:host #icon.expanded:before {
+				content:"▼"; font-size: 1em;
+			}
+		</style>
+		<span id="icon" class="expanded"></span>
 		<content></content>
 	</template>
 	<script>
 		Polymer('disclosure-button', {
 			ready: function() {
+				console.log('ready: ' + this.expanded);
+				if (this.expanded === null) this.expanded = false;
+				if (this.controlfor) {
+					this.setAttribute('aria-controls', this.controlfor);
+					this.target = document.querySelector('#' + this.controlfor);
+					if (!this.target) {
+						console.log("Target not found '" + this.controlfor + "'");
+					}
+				} else {
+					console.log("controlfor attribute not set");
+				}
+				console.log('ready: ' + this.expanded);
 			},
 			buttonClick: function(event, detail, sender) {
-				this.open = !this.open;
+				this.expanded = !this.expanded;
 			},
-			openChanged: function(oldValue, newValue) {
-				this.setAttribute('aria-expanded', newValue);
-				this.target.hidden = !newValue;
-				if (newValue) {
-					this.target.style.display='block';
-				} else {
-					this.target.style.display='none';
-				}
-			},
-			controlforChanged: function(oldValue, newValue) {
-				this.setAttribute('aria-controls', newValue);
-				this.target = document.querySelector('#' + newValue);
+			expandedChanged: function(oldValue, newValue) {
+				console.log('expandedChanged ' + newValue);
 				if (this.target) {
-					this.open = false;
-				} else {		
-					console.log("Target not found '" + newValue + "'");
+					this.setAttribute('aria-expanded', newValue);
+					this.target.hidden = !newValue;
+					if (newValue) {
+						this.$.icon.classList.add('expanded');
+						this.target.style.display='block';
+					} else {
+						this.$.icon.classList.remove('expanded');
+						this.target.style.display='none';
+					}					
+				} else {
+					console.log("Target not found");
 				}
 			},
 		});
