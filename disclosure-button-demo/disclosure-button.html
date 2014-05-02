@@ -1,13 +1,13 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="button-disclosure" extends="button" attributes="disclose open" on-click="{{buttonClick}}">
+<polymer-element name="disclosure-button" extends="button" attributes="disclose open" on-click="{{buttonClick}}">
 	<template>
 		<template if={{open==false}}>►</template>
 		<template if={{open==true}}>▼</template>
 		<content></content>
 	</template>
 	<script>
-		Polymer('button-disclosure', {
+		Polymer('disclosure-button', {
 			ready: function() {
 			},
 			buttonClick: function(event, detail, sender) {
