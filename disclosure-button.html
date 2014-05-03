@@ -16,6 +16,7 @@
 	<script>
 		Polymer('disclosure-button', {
 			ready: function() {
+				this.setAttribute('type', 'button');
 				if (this.expanded === null) this.expanded = false;
 				if (this.controlfor) {
 					this.setAttribute('aria-controls', this.controlfor);
