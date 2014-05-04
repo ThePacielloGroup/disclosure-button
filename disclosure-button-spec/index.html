@@ -317,7 +317,7 @@ header p.subhead {
 
 <header role="banner">
  <h1>The disclosure-button custom element</h1>
- <p class="subhead">Draft, last updated 2 May 2014</p>
+ <p class="subhead">Draft, last updated 5 May 2014</p>
   </header>
 <footer role="contentinfo"><dl>
   <dt>Developed by:</dt>
@@ -333,12 +333,14 @@ header p.subhead {
     <dd>HTML <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#the-button-element"><code>button</code></a> element</dd>
     <dt>additional attributes:</dt>
     <dd><code>controlfor</code> - value - a single valid <code>id</code> reference</dd>
-    <dd><code>expanded</code> - values - <code>true</code> or <code>false</code>, </dd>
+    <dd><code>expanded</code> - values - <code>true</code> or <code>false</code> (issue - <a href="https://github.com/ThePacielloGroup/disclosure-button/issues/2">boolean attribute</a>)
+    </dd>
     </dl>
   <p>The <code>disclosure-button</code> represents a <a href="http://en.wikipedia.org/wiki/Disclosure_widget">disclosure widget</a> which controls the  display state of an element in the same document, referenced via the <code>controlfor</code> attribute. The <code>expanded</code> attribute when set to <code>true</code> removes the HTML <a href="http://www.w3.org/html/wg/drafts/html/master/editing.html#the-hidden-attribute"><code>hidden</code></a> attribute from the element referenced by the <code>controlfor</code> attribute. When set to <code>false</code> it adds the HTML <code>hidden</code> attribute to the element referenced by the <code>controlfor</code> attribute.</p>
   <p>The <code>controlfor</code> attribute is mapped to the <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-controls"><code>aria-controls</code></a> attribute and the <code>expanded</code> attribute is mapped to the <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded"><code>aria-expanded</code></a> attribute. Whenever the values of the custom element attributes are set, the values of the associated <code>aria-</code> attributes reflect the values of those values. This feature, along with the use of the HTML <code>button</code> element as an extension point, provides built-in name, role state and interaction accessibility to the <code>disclosure-button</code> custom element.</p>
   <h4>Control behaviour</h4>
-  <p>Activating the disclosure button by pressing or clicking changes the state of the referenced element. A visual indication of the current state of the referenced element is shown by the button arrow icon orientation.
+  <p>Activating the disclosure button by pressing or clicking changes the state of the referenced element. A visual indication of the current state of the referenced element is shown by the button arrow icon orientation (issue - <a href="https://github.com/ThePacielloGroup/disclosure-button/issues/1">arrow announced by jaws</a>)
+  <p>.
   <div class="example">
     <p>Here is an example of use of the<code> disclosure-button</code> custom element. </p>
     <p>Display a data table on activation of the disclosure button:</p>
@@ -380,8 +382,7 @@ by Country and Season.<mark>&lt;/disclosure-button&gt;</mark>
 &lt;td&gt;1.2 &lt;/td&gt;&lt;td&gt;1 (lowest)&lt;/td&gt;
 &lt;/tr&gt;<br>&lt;/table&gt;
   </pre>
-  <p><a href="http://thepaciellogroup.github.io/disclosure-button/example2.html">disclosure-button – working demo 1</a> and <a href="http://thepaciellogroup.github.io/disclosure-button/">working demo 2</a>   
-  <p><strong>Note:</strong> demos use older syntax than what is described in this specification doc.      </div></p>
+  <p><a href="http://thepaciellogroup.github.io/disclosure-button/example2.html">disclosure-button – working demo 1</a> and <a href="http://thepaciellogroup.github.io/disclosure-button/">working demo 2</a></div></p>
 
 </div>
 </body></html>
