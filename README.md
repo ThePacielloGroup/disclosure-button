@@ -1,5 +1,5 @@
 
-Recasting of HTML5 destails/summary dislosure widget as a custom component
+Recasting of HTML5 details/summary dislosure widget as a custom component
 
 spec: http://thepaciellogroup.github.io/disclosure-button/disclosure-button-spec/index.html
 
