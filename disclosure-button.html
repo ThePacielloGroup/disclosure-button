@@ -18,6 +18,7 @@
 			ready: function() {
 				this.setAttribute('type', 'button');
 				if (this.expanded === null) this.expanded = false;
+				else this.expanded = true;
 				if (this.controlfor) {
 					this.setAttribute('aria-controls', this.controlfor);
 					this.target = document.querySelector('#' + this.controlfor);
