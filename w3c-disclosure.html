@@ -1,6 +1,6 @@
 <link rel="import" href="components/polymer/polymer.html">
 
-<polymer-element name="disclosure-button" extends="button" attributes="controlfor expanded" on-click="{{buttonClick}}">
+<polymer-element name="w3c-disclosure" extends="button" attributes="controlfor expanded" on-click="{{buttonClick}}">
 	<template>
 		<style type="text/css">
 			:host #icon:before {
@@ -14,7 +14,7 @@
 		<content></content>
 	</template>
 	<script>
-		Polymer('disclosure-button', {
+		Polymer('w3c-disclosure', {
 			ready: function() {
 				this.setAttribute('type', 'button');
 				if (this.expanded === null) this.expanded = false;
