@@ -311,9 +311,11 @@ header p.subhead {
   </style>
   <link href="http://www.w3.org/StyleSheets/TR/w3c-unofficial" rel="stylesheet" type="text/css">
 <title>The w3c-disclosure custom element</title>
+<script src="components/platform/platform.js"></script>
+	<link rel="import" href="w3c-disclosure.html">
 </head>
 
-<body>
+<body unresolved>
 
 <header role="banner">
  <h1>The w3c-disclosure custom element</h1>
@@ -340,8 +342,9 @@ header p.subhead {
   <p>The <code>controlfor</code> attribute is mapped to the <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-controls"><code>aria-controls</code></a> attribute and the <code>expanded</code> attribute is mapped to the <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded"><code>aria-expanded</code></a> attribute. Whenever the values of the custom element attributes are set, the values of the associated <code>aria-</code> attributes reflect the values of those values. This feature, along with the use of the HTML <code>button</code> element as an extension point, provides built-in name, role state and interaction accessibility to the <code>w3c-disclosure</code> custom element.</p>
   <h4>Control behaviour</h4>
   <p>Activating the w3c-disclosure button by pressing or clicking changes the display state of the referenced element. A visual indication of the current state of the referenced element is shown by the button arrow icon orientation (issue - <a href="https://github.com/ThePacielloGroup/w3c-disclosure/issues/1">arrow announced by jaws</a>)
-  <p>.
-  <div class="example">
+  <p>
+  <button is="w3c-disclosure" controlfor="example1" expanded>Code example</button></p>
+  <div class="example" id="example1">
     <p>Here is an example of use of the<code> w3c-disclosure</code> custom element. </p>
     <p>Display a data table on activation of the disclosure button:</p>
     <p><strong>Hidden state:</strong></p>
