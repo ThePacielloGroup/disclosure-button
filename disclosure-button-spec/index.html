@@ -310,14 +310,14 @@ header p.subhead {
 }
   </style>
   <link href="http://www.w3.org/StyleSheets/TR/w3c-unofficial" rel="stylesheet" type="text/css">
-<title>The disclosure-button custom element</title>
+<title>The w3c-disclosure custom element</title>
 </head>
 
 <body>
 
 <header role="banner">
- <h1>The disclosure-button custom element</h1>
- <p class="subhead">Draft, last updated 5 May 2014</p>
+ <h1>The w3c-disclosure custom element</h1>
+ <p class="subhead">Draft, last updated 24 May 2014</p>
   </header>
 <footer role="contentinfo"><dl>
   <dt>Developed by:</dt>
@@ -327,33 +327,33 @@ header p.subhead {
   <p class="warning"><strong>WARNING!</strong> This an early draft of a proposed custom element, it can and will change without notice!</p>
 </footer>
 <div role="main">
-  <h3>The <dfn><code>disclosure-button</code></dfn> element</h3>
+  <h3>The <dfn><code>w3c-disclosure</code></dfn> element</h3>
   <dl class="element">
     <dt>Extends:</dt>
     <dd>HTML <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#the-button-element"><code>button</code></a> element</dd>
     <dt>additional attributes:</dt>
-    <dd><code>controlfor</code> - value - a single valid <code>id</code> reference</dd>
-    <dd><code>expanded</code> - values - <code>true</code> or <code>false</code> (issue - <a href="https://github.com/ThePacielloGroup/disclosure-button/issues/2">boolean attribute</a>)
-    </dd>
+    <dd><code>controlfor</code> - <a data-anolis-xref="concept-id" href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#concept-id">unique identifier (ID)</a> -<code> </code>reference to the controlled element</dd>
+    <dd><code>expanded</code> - <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#boolean-attributes">boolean</a> - display state of the controlled element </dd>
     </dl>
-  <p>The <code>disclosure-button</code> represents a <a href="http://en.wikipedia.org/wiki/Disclosure_widget">disclosure widget</a> which controls the  display state of an element in the same document, referenced via the <code>controlfor</code> attribute. The <code>expanded</code> attribute when set to <code>true</code> removes the HTML <a href="http://www.w3.org/html/wg/drafts/html/master/editing.html#the-hidden-attribute"><code>hidden</code></a> attribute from the element referenced by the <code>controlfor</code> attribute. When set to <code>false</code> it adds the HTML <code>hidden</code> attribute to the element referenced by the <code>controlfor</code> attribute.</p>
-  <p>The <code>controlfor</code> attribute is mapped to the <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-controls"><code>aria-controls</code></a> attribute and the <code>expanded</code> attribute is mapped to the <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded"><code>aria-expanded</code></a> attribute. Whenever the values of the custom element attributes are set, the values of the associated <code>aria-</code> attributes reflect the values of those values. This feature, along with the use of the HTML <code>button</code> element as an extension point, provides built-in name, role state and interaction accessibility to the <code>disclosure-button</code> custom element.</p>
+  <p>The <code>w3c-disclosure</code> represents a <a href="http://en.wikipedia.org/wiki/Disclosure_widget">disclosure widget</a> which controls the  display state of an element in the same document, referenced via the <code>controlfor</code> attribute. The <code>expanded</code> attribute present<code></code> removes the HTML <a href="http://www.w3.org/html/wg/drafts/html/master/editing.html#the-hidden-attribute"><code>hidden</code></a> attribute from the element referenced by the <code>controlfor</code> attribute. When absent<code></code> it adds the HTML <code>hidden</code> attribute to the element referenced by the <code>controlfor</code> attribute.</p>
+  <h4>Accessibility layer semantics</h4>
+  <p>The <code>controlfor</code> attribute is mapped to the <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-controls"><code>aria-controls</code></a> attribute and the <code>expanded</code> attribute is mapped to the <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded"><code>aria-expanded</code></a> attribute. Whenever the values of the custom element attributes are set, the values of the associated <code>aria-</code> attributes reflect the values of those values. This feature, along with the use of the HTML <code>button</code> element as an extension point, provides built-in name, role state and interaction accessibility to the <code>w3c-disclosure</code> custom element.</p>
   <h4>Control behaviour</h4>
-  <p>Activating the disclosure button by pressing or clicking changes the state of the referenced element. A visual indication of the current state of the referenced element is shown by the button arrow icon orientation (issue - <a href="https://github.com/ThePacielloGroup/disclosure-button/issues/1">arrow announced by jaws</a>)
+  <p>Activating the w3c-disclosure button by pressing or clicking changes the display state of the referenced element. A visual indication of the current state of the referenced element is shown by the button arrow icon orientation (issue - <a href="https://github.com/ThePacielloGroup/w3c-disclosure/issues/1">arrow announced by jaws</a>)
   <p>.
   <div class="example">
-    <p>Here is an example of use of the<code> disclosure-button</code> custom element. </p>
+    <p>Here is an example of use of the<code> w3c-disclosure</code> custom element. </p>
     <p>Display a data table on activation of the disclosure button:</p>
     <p><strong>Hidden state:</strong></p>
     <p><img src="hidden.png" width="300" height="41"></p>
-    <pre><mark>&lt;disclosure-button controlfor=&quot;table-details&quot; expanded=&quot;false&quot;&gt;</mark>
- Rainfall in millimetres by Country and Season.<mark>&lt;/disclosure-button&gt;</mark>
+    <pre>&lt;button <mark>is=&quot;w3c-disclosure&quot; controlfor=&quot;table-details&quot;&gt;</mark>
+ Rainfall in millimetres by Country and Season.<mark>&lt;/button&gt;</mark>
 &lt;table <mark>id=&quot;table-details&quot; hidden&gt;</mark>
 ...</pre>
     <strong>Visible state:</strong>
 <p><img src="visible.png" width="300" height="267">     
-<pre><mark>&lt;disclosure-button controlfor=&quot;table-details&quot; <mark>expanded=&quot;true&quot;</mark>&gt;</mark>Rainfall in millimetres 
-by Country and Season.<mark>&lt;/disclosure-button&gt;</mark>
+<pre>&lt;button <mark>is=&quot;w3c-disclosure&quot; controlfor=&quot;table-details&quot; expanded</mark>&gt;Rainfall in millimetres 
+by Country and Season.&lt;/button&gt;
 &lt;table <mark>id=&quot;table-details&quot;&gt;</mark>
 &lt;tr&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -382,7 +382,7 @@ by Country and Season.<mark>&lt;/disclosure-button&gt;</mark>
 &lt;td&gt;1.2 &lt;/td&gt;&lt;td&gt;1 (lowest)&lt;/td&gt;
 &lt;/tr&gt;<br>&lt;/table&gt;
   </pre>
-  <p><a href="http://thepaciellogroup.github.io/disclosure-button/example2.html">disclosure-button – working demo 1</a> and <a href="http://thepaciellogroup.github.io/disclosure-button/">working demo 2</a></div></p>
+  <p><a href="http://thepaciellogroup.github.io/w3c-disclosure/example2.html">w3c-disclosure – working demo 1</a> and <a href="http://thepaciellogroup.github.io/w3c-disclosure/">working demo 2</a></div></p>
 
 </div>
 </body></html>
