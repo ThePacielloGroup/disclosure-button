@@ -329,7 +329,7 @@ header p.subhead {
   <p class="warning"><strong>WARNING!</strong> This an early draft of a proposed custom element, it can and will change without notice!</p>
 </footer>
 <div role="main">
-  <h3>The <dfn><code>w3c-disclosure</code></dfn> element</h3>
+  <h2>The <dfn><code>w3c-disclosure</code></dfn> element</h2>
   <dl class="element">
     <dt>Extends:</dt>
     <dd>HTML <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#the-button-element"><code>button</code></a> element</dd>
@@ -338,9 +338,9 @@ header p.subhead {
     <dd><code>expanded</code> - <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#boolean-attributes">boolean</a> - display state of the controlled element </dd>
     </dl>
   <p>The <code>w3c-disclosure</code> represents a <a href="http://en.wikipedia.org/wiki/Disclosure_widget">disclosure widget</a> which controls the  display state of an element in the same document, referenced via the <code>controlfor</code> attribute. The <code>expanded</code> attribute present<code></code> removes the HTML <a href="http://www.w3.org/html/wg/drafts/html/master/editing.html#the-hidden-attribute"><code>hidden</code></a> attribute from the element referenced by the <code>controlfor</code> attribute. When absent<code></code> it adds the HTML <code>hidden</code> attribute to the element referenced by the <code>controlfor</code> attribute.</p>
-  <h4>Accessibility layer semantics</h4>
+  <h3>Accessibility layer semantics</h3>
   <p>The <code>controlfor</code> attribute is mapped to the <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-controls"><code>aria-controls</code></a> attribute and the <code>expanded</code> attribute is mapped to the <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded"><code>aria-expanded</code></a> attribute. Whenever the values of the custom element attributes are set, the values of the associated <code>aria-</code> attributes reflect the values of those values. This feature, along with the use of the HTML <code>button</code> element as an extension point, provides built-in name, role state and interaction accessibility to the <code>w3c-disclosure</code> custom element.</p>
-  <h4>Control behaviour</h4>
+  <h3>Control behaviour</h3>
   <p>Activating the w3c-disclosure button by pressing or clicking changes the display state of the referenced element. A visual indication of the current state of the referenced element is shown by the button arrow icon orientation (issue - <a href="https://github.com/ThePacielloGroup/w3c-disclosure/issues/1">arrow announced by jaws</a>)
   <p>
   <button is="w3c-disclosure" controlfor="example1">Code example</button></p>
