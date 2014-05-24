@@ -35,7 +35,7 @@
 			expandedChanged: function(oldValue, newValue) {
 				if (this.target) {
 					this.setAttribute('aria-expanded', newValue);
-					this.target.hidden = !newValue;
+					//this.target.hidden = !newValue;
 					if (newValue) {
 						this.$.icon.classList.add('expanded');
 						this.target.style.display='block';
